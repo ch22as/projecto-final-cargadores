@@ -26,8 +26,6 @@ const Login = () => {
     // Comprobacion
 
     setIsLogin(true)
-
-    console.log(formData)
   }
 
   const usernameRef = useRef<HTMLInputElement>(null)
