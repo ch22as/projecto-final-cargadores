@@ -1,24 +1,27 @@
 import { RouteObject } from "react-router-dom"
 import Login from "./pages/Login"
 import Layout from "./layouts/Layout"
+import ProtectedRoute from "./Components/ProtectedRoute"
+import Users from "./pages/Users"
+import Chargers from "./pages/Chargers"
 
 export const routes: RouteObject[] = [
   {
     path: "/",
-    element: <Layout />,
+    element: <ProtectedRoute element={<Layout />} />,
     children: [
       {
         path: 'users',
-        element: <h2>users</h2>
+        element: <Users />
       },
       {
         path: 'charges',
-        element: <h2>charges</h2>
+        element: <Chargers />
       },
       {
         path: 'settings',
         element: <h2>settings</h2>
-      },
+      }
     ]
   },
   {
